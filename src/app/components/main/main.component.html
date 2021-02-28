@@ -1,0 +1,18 @@
+<div class="main__app__container">
+  <div class="main__app__header">
+    <mat-slide-toggle (toggleChange)="toggle()"></mat-slide-toggle>
+    <div class="main__header__left">
+      <mat-icon matTooltip="history" class="icon">schedule</mat-icon>
+      <input
+        matTooltip="Search Channel"
+        type="text"
+        placeholder="Search Channel Name..."
+      />
+      <mat-icon matTooltip="help" class="icon">help_outline</mat-icon>
+    </div>
+    <mat-icon class="account_icon">account_box</mat-icon>
+  </div>
+  <div class="main__app__content">
+    <app-inner-container></app-inner-container>
+  </div>
+</div>

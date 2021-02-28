@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+body {
+  overflow-y: hidden;
+}
+
+:root {
+  --sidebar_bg: #3f0e40;
+  --navbar_bg: #330c33;
+  --chat_bg: #ffffff;
+  --chat_font: #00000;
+  --chat_hover: #f2f2f2;
+  --chat_icon_color: "rgba(0, 0, 0, 0.7)";
+}

@@ -1,0 +1,171 @@
+<div class="backdrop" *ngIf="showBackdrop" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <h1 class="modal__title bold">Create a Channel</h1>
+  <h4>
+    Channels are where your team communicates. They’re best when organized
+    around a topic — #marketing, for example.
+  </h4>
+  <form action="">
+    <label for="" class="bold"><h4>Name</h4></label>
+    <input
+      type="text"
+      placeholder="# e.g. plan-budget"
+      [(ngModel)]="newChannelName"
+      name="newChannelName"
+    />
+    <label for="" class="bold"><h4>Description (Optional)</h4></label>
+    <input type="text" />
+    <p>What's this channel about ?</p>
+  </form>
+  <div class="modal__content">
+    <span>
+      <h1 class="bold">Make Private</h1>
+      <p>
+        When a channel is set to private. It can only be viewed by invitations
+      </p>
+    </span>
+    <span class="make-private-button"
+      ><label class="switch">
+        <input type="checkbox" checked />
+        <span class="slider round"></span>
+      </label>
+    </span>
+  </div>
+  <div class="modal__actions">
+    <i class="fa fa-info-circle">Learn more</i>
+    <button class="modal__action" type="button" (click)="addChannel()">
+      Create
+    </button>
+  </div>
+</div>
+<div class="modal2" *ngIf="showModal2">
+  <h1>Invite People To Coda Academy Batch 2021 - II</h1>
+  <form action="">
+    <label for="" class="bold"><h4>To</h4></label>
+    <textarea
+      type="text"
+      placeholder="name@gmail.com"
+      [(ngModel)]="newTeammateName"
+      name="newTeammateName"
+    ></textarea>
+    <p>What's this channel about ?</p>
+  </form>
+  <div class="modal__actions">
+    <div class="copy-link">
+      <mat-icon> attach_file</mat-icon>Copy Invite Link
+    </div>
+    <button class="modal__action" type="button" (click)="addTeamate()">
+      Add
+    </button>
+  </div>
+</div>
+<div class="sidebar">
+  <div class="sidebar__header">
+    <div class="sidebar__header__left">
+      <h4>Coda Acadamy batch - III</h4>
+      <mat-icon class="icon">keyboard_arrow_down</mat-icon>
+    </div>
+    <div class="sidebar__header__right">
+      <mat-icon class="icon">edit_location_alt</mat-icon>
+    </div>
+  </div>
+
+  <div class="sidebar__footer">
+    <div class="footer__top">
+      <div class="top__menu">
+        <mat-icon class="icon">chat</mat-icon>
+        <h4>All DMs</h4>
+      </div>
+      <div class="top__menu">
+        <mat-icon class="icon">more_vert</mat-icon>
+        <h4>More</h4>
+      </div>
+      <div class="top__menu">
+        <mat-icon class="icon">arrow_drop_down</mat-icon>
+        <h4>Channels</h4>
+        <mat-icon class="icon add" (click)="openModal()">add</mat-icon>
+      </div>
+    </div>
+
+    <div class="footer__channel__list">
+      <!-- use ngFor -->
+      <div
+        class="channel__name"
+        *ngFor="let channel of channels; let i = index"
+        routerLinkActive="active"
+        routerLink="chat/{{ channel.name }}/channel"
+      >
+        <h4>#</h4>
+        <h4>{{ channel.name }}</h4>
+        <span class="message-count" *ngIf="channel.unread">{{
+          channel.unread
+        }}</span>
+      </div>
+      <div class="channel__name" (click)="openModal()">
+        <mat-icon style="margin-left: -7px" class="icon">add</mat-icon>
+        <h4>Add Channel</h4>
+      </div>
+    </div>
+
+    <div class="footer__dm__list">
+      <div class="top__menu">
+        <mat-icon class="icon">arrow_drop_down</mat-icon>
+        <h4>Direct messages</h4>
+      </div>
+
+      <!-- use ngFor -->
+      <div
+        class="dm"
+        *ngFor="let message of directMessages; let i = index"
+        routerLinkActive="active"
+        routerLink="chat/{{ message.userId }}/message"
+      >
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>{{ message.name }}</h4>
+        <span class="message-count" *ngIf="message.unread">{{
+          message.unread
+        }}</span>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <!-- <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>Kishore</h4>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>Mahadevan</h4>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>JayaHarish</h4>
+        <mat-icon class="close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>Balaji</h4>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>Kishore</h4>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>Mahadevan</h4>
+        <mat-icon class="icon close">close</mat-icon>
+      </div>
+      <div class="dm">
+        <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>
+        <h4>JayaHarish</h4>
+        <mat-icon class="close">close</mat-icon>
+      </div> -->
+      <div class="dm" (click)="openModal2()">
+        <mat-icon style="margin-left: -7px" class="icon add">add</mat-icon>
+        <h4>add teammates</h4>
+      </div>
+    </div>
+  </div>
+</div>

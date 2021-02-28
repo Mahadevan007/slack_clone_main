@@ -1,0 +1,53 @@
+.main__app__container {
+  height: 100vh;
+  width: 100vw;
+  background: var(--sidebar_bg);
+
+  .main__app__header {
+    width: 100%;
+    padding: 5px 20px;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navbar_bg);
+
+    .main__header__left {
+      flex: 0.7;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      input {
+        width: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: 0;
+        outline: none;
+        border-radius: 3px;
+        margin: 0 20px;
+        color: white;
+        padding: 6px;
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 1px;
+      }
+
+      .icon {
+        color: white;
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+    .account_icon {
+      color: white;
+      cursor: pointer;
+      opacity: 0.8;
+      height: 100%;
+      font-size: 30px;
+    }
+  }
+  .main__app__content {
+    height: 95%;
+    width: 100%;
+  }
+}
