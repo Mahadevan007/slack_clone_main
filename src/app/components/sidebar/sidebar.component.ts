@@ -19,7 +19,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
   showBackdrop: boolean = false;
   newChannelName: string = "";
   newTeammateName: string = "";
-  notifications: INotification[] = []
+  notifications: INotification[] = [];
+  footerChatListShow: boolean = true;
+  footerChannelListShow: boolean = true;
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private messageService: messageService) { }
 
   ngOnInit(): void {
@@ -77,5 +79,19 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.closeModal();
   }
 
+  showfooterChannelList() {
+    this.footerChannelListShow = true;
+  }
 
+  hidefooterChannelList() {
+    this.footerChannelListShow = false;
+  }
+
+  showfooterChatList() {
+    this.footerChatListShow = true;
+  }
+
+  hidefooterChatList() {
+    this.footerChatListShow = false;
+  }
 }

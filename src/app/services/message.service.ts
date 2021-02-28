@@ -48,11 +48,13 @@ export class messageService {
         },
         {
             name: 'Kishore',
+            unread: 4,
             type: 'message',
             userId: 'Kishore1234',
         },
         {
             name: 'Vinoth',
+            unread: 2,
             type: 'message',
             userId: 'vinoth55',
 
@@ -64,6 +66,7 @@ export class messageService {
         },
         {
             name: 'Jayaharish',
+            unread: 7,
             type: 'message',
             userId: 'Jayaharish11'
         }, {
@@ -73,6 +76,7 @@ export class messageService {
         },
         {
             name: 'Shankar',
+            unread: 10,
             type: 'message',
             userId: 'shankar15'
         },
@@ -119,7 +123,7 @@ export class messageService {
         {
             userId: 'karthik78',
             username: 'Karthik',
-            message: 'This is a very new slack clone UI',
+            message: 'Have a good day',
             timestamp: new Date(),
             bold: false,
             italic: false
@@ -135,7 +139,7 @@ export class messageService {
         {
             userId: 'Jayaharish11',
             username: 'Jayaharish',
-            message: 'This is a very nice slack clone UI',
+            message: 'Hello',
             timestamp: new Date(),
             bold: false,
             italic: false
@@ -143,7 +147,7 @@ export class messageService {
         {
             userId: 'Jayaharish11',
             username: 'Jayaharish',
-            message: 'This is a very nice slack clone UI',
+            message: 'Hi',
             timestamp: new Date(),
             bold: false,
             italic: false
@@ -151,7 +155,7 @@ export class messageService {
         {
             userId: 'vinoth55',
             username: 'Vinoth',
-            message: 'This is a very nice slack clone UI',
+            message: 'Hey There',
             timestamp: new Date(),
             bold: false,
             italic: false
