@@ -148,6 +148,8 @@ export class ChatComponent implements OnInit, OnDestroy {
           italic: this.italicText
         })
         this.message = "";
+        this.boldText = false;
+        this.italicText = false;
       } else {
         this.messageService.addChannels(this.channelName, {
           message: this.message,
@@ -158,6 +160,8 @@ export class ChatComponent implements OnInit, OnDestroy {
           italic: this.italicText
         })
         this.message = "";
+        this.boldText = false;
+        this.italicText = false;
       }
     }
   }
