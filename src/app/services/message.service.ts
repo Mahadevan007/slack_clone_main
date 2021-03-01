@@ -81,9 +81,9 @@ export class messageService {
             userId: 'shankar15'
         },
         {
-            name: 'Vinoth',
+            name: 'Rajesh',
             type: 'message',
-            userId: 'vinoth15'
+            userId: 'rajesh15'
         }
     ];
 
@@ -454,10 +454,18 @@ export class messageService {
     }
 
     addNotification(name: string, type: NotificationType) {
-        this.notifications.push({
-            name: name,
-            type: type
-        })
+        if (type == "channel") {
+            this.notifications.push({
+                name: name,
+                type: type
+            })
+        } else {
+            this.notifications.push({
+                name: name,
+                userId: name,
+                type: type
+            })
+        }
         this.notificationsChanged.next(this.notifications);
     }
 
@@ -480,6 +488,19 @@ export class messageService {
         console.log(message);
         this.chatMessages.push(message);
         this.messagesChanged.next(this.chatMessages);
+    }
+
+    deleteTeammate(userid: string) {
+        // this.notifications.splice(index, 1);
+        var dataIndex: number;
+        var that = this;
+        this.notifications.forEach(function (data, index) {
+            if (data.userId == userid) {
+                that.notifications.splice(index, 1);
+            }
+        })
+
+        this.notificationsChanged.next(this.notifications);
     }
 
     addChannels(channelname: string, message: IChatMessage) {

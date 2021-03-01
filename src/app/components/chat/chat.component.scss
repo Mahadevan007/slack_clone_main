@@ -47,6 +47,10 @@
   flex-direction: column;
   color: var(--chat_font);
 
+  textarea {
+    color: var(--chat_font);
+  }
+
   .chat__header {
     height: 59px;
     border-bottom: 1px solid;

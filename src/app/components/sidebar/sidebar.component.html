@@ -151,7 +151,9 @@
           <span class="message-count" *ngIf="message.unread">{{
             message.unread
           }}</span>
-          <mat-icon class="icon close">close</mat-icon>
+          <mat-icon class="icon close" (click)="deleteTeammate(message.userId)"
+            >close</mat-icon
+          >
         </div>
         <!-- <div class="dm">
         <mat-icon style="margin-left: -7px" class="icon">account_box</mat-icon>

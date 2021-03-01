@@ -94,4 +94,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   hidefooterChatList() {
     this.footerChatListShow = false;
   }
+
+  deleteTeammate(userid: string) {
+    this.messageService.deleteTeammate(userid);
+  }
 }
