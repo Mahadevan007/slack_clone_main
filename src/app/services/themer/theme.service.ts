@@ -8,6 +8,8 @@ export class ThemeService {
   lightTheme: Theme = {
     navbar_bg: '#3f0e40',
     sidebar_bg: '#330c33',
+    sidebar_hover_bg: "#330c33",
+    sidebar_hover_font: "white",
     chat_bg: '#FFFFFF',
     chat_font: '#00000',
     chat_hover: '#f2f2f2',
@@ -16,6 +18,8 @@ export class ThemeService {
   darkTheme: Theme = {
     navbar_bg: '#121016',
     sidebar_bg: '#19171D',
+    sidebar_hover_bg: "#1A1D21",
+    sidebar_hover_font: "black",
     chat_bg: '#1A1D21',
     chat_font: '#ffff',
     chat_hover: '#222529',

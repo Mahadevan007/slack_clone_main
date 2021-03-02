@@ -38,20 +38,23 @@
       class="msg__details"
       *ngFor="let message of currentUser; let i = index"
     >
-      <mat-icon class="icon">account_box</mat-icon>
+      <mat-icon class="icon" *ngIf="message.message">account_box</mat-icon>
       <div class="chat__details">
-        <div class="text__name__time">
-          <h4>{{ message.username }}</h4>
-          <p>{{ message.timestamp | date: "shortTime" }}</p>
+        <div class="text__name__time" *ngIf="message.message">
+          <h4 *ngIf="message.message">{{ message.username }}</h4>
+          <p *ngIf="message.message">
+            {{ message.timestamp | date: "shortTime" }}
+          </p>
         </div>
         <div
           class="chat__msg"
           [ngClass]="{ bold: message.bold, italic: message.italic }"
+          *ngIf="message.message"
         >
           <p>{{ message.message }}</p>
         </div>
       </div>
-      <div class="icons__floater">
+      <div class="icons__floater" *ngIf="message.message">
         <mat-icon class="icons">mood</mat-icon>
         <mat-icon class="icons">textsms</mat-icon>
         <mat-icon class="icons">shortcut</mat-icon>
@@ -66,20 +69,23 @@
       class="msg__details"
       *ngFor="let messages of currentChannel; let i = index"
     >
-      <mat-icon class="icon">account_box</mat-icon>
+      <mat-icon class="icon" *ngIf="messages.message">account_box</mat-icon>
       <div class="chat__details">
         <div class="text__name__time">
-          <h4>{{ messages.username }}</h4>
-          <p>{{ messages.timestamp | date: "shortTime" }}</p>
+          <h4 *ngIf="messages.message">{{ messages.username }}</h4>
+          <p *ngIf="messages.message">
+            {{ messages.timestamp | date: "shortTime" }}
+          </p>
         </div>
         <div
           class="chat__msg"
           [ngClass]="{ bold: messages.bold, italic: messages.italic }"
+          *ngIf="messages.message"
         >
           <p>{{ messages.message }}</p>
         </div>
       </div>
-      <div class="icons__floater">
+      <div class="icons__floater" *ngIf="messages.message">
         <mat-icon class="icons">mood</mat-icon>
         <mat-icon class="icons">textsms</mat-icon>
         <mat-icon class="icons">shortcut</mat-icon>

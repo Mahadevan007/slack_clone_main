@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChatComponent } from './components/chat/chat.component'
 import { messageService } from './services/message.service';
 import { FormsModule } from '@angular/forms';
+import { ResizableModule } from 'angular-resizable-element';
 import { ThemeService } from './services/themer/theme.service';
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ThemeService } from './services/themer/theme.service';
     MatIconModule,
     MatTooltipModule,
     FormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ResizableModule
   ],
   providers: [messageService, ThemeService],
   bootstrap: [AppComponent]

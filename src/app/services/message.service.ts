@@ -159,7 +159,32 @@ export class messageService {
             timestamp: new Date(),
             bold: false,
             italic: false
+        },
+        {
+            userId: 'shankar15',
+            username: 'Shankar',
+            message: 'How you doin',
+            timestamp: new Date(),
+            bold: false,
+            italic: false
+        },
+        {
+            userId: 'rajesh15',
+            username: 'Rajesh',
+            message: 'Hey dood',
+            timestamp: new Date(),
+            bold: false,
+            italic: false
+        },
+        {
+            userId: 'arun15',
+            username: 'Arun',
+            message: 'Hey man',
+            timestamp: new Date(),
+            bold: true,
+            italic: false
         }
+
 
     ]
 
